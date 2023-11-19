@@ -14,5 +14,5 @@
 &#128421;
 <h4>Projeto muito interativo e otimizado.</h4>
 
-<img src="https://github.com/Thaisa-R/Projeto---5---Convert-Currency/assets/145076559/1420fbdc-ba8d-4705-a8f6-9d2230216d58"/>
+<img src="https://github.com/Thaisa-R/Projeto---5---Convert-Currency/assets/145076559/71ffc48b-76b7-4c12-8722-6efcbe50e2e5"/>
 <img src="https://github.com/Thaisa-R/Projeto---5---Convert-Currency/assets/145076559/4d2b3d9d-112a-4140-89c2-668170976631"/>
