@@ -32,7 +32,8 @@ label {
 
 }
 
-select, input {
+select,
+input {
     background: #FFFFFF;
     border-radius: 4px;
     border: 1px solid #BBBBBB;
@@ -95,9 +96,9 @@ section {
     font-size: 14px;
 }
 
-.currency-value, .currency-value-to-convert {
-    color:#555555;
+.currency-value-to-convert,
+.currency-value {
+    color: #555555;
     font-weight: 700;
     font-size: 20px;
-    }
-
+}

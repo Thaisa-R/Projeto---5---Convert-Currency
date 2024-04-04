@@ -1,29 +1,28 @@
 const convertButton = document.querySelector(".convert-button");
-const currencyConverted= document.querySelector(".currency-converted");
+const currencyConverted = document.querySelector(".currency-converted");
 const currencySelectConvert = document.querySelector(".currency-select-convert");
 
-
-function convertValues() {
+async function convertValues() {
   const inputCurrencyValue = document.querySelector(".input-currency").value;
   const currencyValueToConvert = document.querySelector(".currency-value-to-convert");
   const currencyValueConverted = document.querySelector(".currency-value");
   result = 1;
 
-  
-  const dolarToday = 5.0;
-  const realToday = 1.0;
-  const euroToday = 5.3;
-  const libraToday = 6.1;
-  const bitcoinToday = 145.0;
+  const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL,GBP-BRL").then(response => response.json());
 
+  const dolarToday = data.USDBRL.high;
+  const realToday = 1.00;
+  const euroToday = data.EURBRL.high;
+  const libraToday = data.GBPBRL.high;
+  const bitcoinToday = data.BTCBRL.high;
 
-  if (currencySelectConvert.value == "real-convert") 
+  if (currencySelectConvert.value == "real-convert")
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
       style: "currency",
       currency: "BRL",
     }).format(inputCurrencyValue);
-    result = inputCurrencyValue * realToday;
-  
+  result = inputCurrencyValue * realToday;
+
 
   if (currencySelectConvert.value == "dolar-convert") {
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("en-US", {
@@ -54,7 +53,7 @@ function convertValues() {
     }).format(inputCurrencyValue);
     result = inputCurrencyValue * bitcoinToday;
   }
-//
+  //
   if (currencyConverted.value == "real-converted")
     currencyValueConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
       style: "currency",
@@ -91,9 +90,9 @@ function convertValues() {
   }
 }
 
-function changeCurrencySelectConvert() {
+const changeCurrencySelectConvert = () => {
   //*console.log("Trocou de moeda")
-  
+
   const currencyName = document.getElementById("currency-name-convert");
   const currencyImage = document.querySelector(".img-currency-convert");
 
@@ -120,7 +119,7 @@ function changeCurrencySelectConvert() {
   }
 }
 
-function changeCurrency() {
+const changeCurrency = () => {
   //*console.log("Trocou de moeda")
 
   const currencyNameConverted = document.getElementById("currency-name-converted");
